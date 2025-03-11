@@ -4,11 +4,14 @@ import './Loginpopup.css'
 const Loginpopup = () => {
     const[forgetPasswordState, setForgetPasswordState]=useState(false);
     const [currentState,setCurrentState]=useState("Login");
+    const onForgotHandler=()=>{
+      alert("password changed");
+    }
 
     if(forgetPasswordState){
       return(
         <div className='login-popup'>
-        <form action="" className="login-popup-container">
+        <form action="" className="login-popup-container" >
 
             <div className="login-popup-title">
                 <h2>Forgot </h2>
@@ -19,7 +22,7 @@ const Loginpopup = () => {
                 <input type="password" placeholder='Previous password' required />
                 <input type="password" placeholder='New password' required />
             </div>
-            <button>Forgot Password</button>
+            <button onClick={onForgotHandler}>Forgot Password</button>
              <div className="login-popup-condition">
                 <input type="checkbox" required />
                 <p className='para'>I aggree terms and condition and privacy policy.</p>
@@ -35,9 +38,14 @@ const Loginpopup = () => {
 
       )
     }
+    const onsubmitHandler=()=>{
+      alert("Form Sucessfully submited");
+    }
+    
+
   return (
     <div className='login-popup'>
-        <form action="" className="login-popup-container">
+        <form action="" className="login-popup-container" onSubmit={onsubmitHandler}>
 
             <div className="login-popup-title">
                 <h2>{currentState}</h2>
